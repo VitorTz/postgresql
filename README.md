@@ -36,3 +36,13 @@ GRANT ALL PRIVILEGES ON DATABASE nome_banco TO nome_usuario;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO nome_usuario;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO nome_usuario;
 ```
+
+
+# Backup
+
+## Apenas inserts
+```postgresql
+pg_dump --data-only --table=schema.tabela --inserts "postgresql://usuario:senha@host:5432/banco" > backup.sql
+
+psql "postgresql://usuario:senha@host:5432/banco" < backup.sql
+```
