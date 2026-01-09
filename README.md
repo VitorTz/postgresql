@@ -46,3 +46,7 @@ pg_dump --data-only --table=schema.tabela --inserts "postgresql://usuario:senha@
 
 psql "postgresql://usuario:senha@host:5432/banco" < backup.sql
 ```
+
+# Delete
+
+> sudo -u postgres dropdb nome_do_banco
